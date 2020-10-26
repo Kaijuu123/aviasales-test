@@ -1,0 +1,314 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #F3F7FA;
+}
+
+.black-text {
+  font-weight: 600;
+  font-size: 0.75em;
+  text-transform: uppercase;
+  color: #4A4A4A;
+  letter-spacing: 0.5px;
+  
+}
+
+.black-text-md {
+  color: #4A4A4A;
+  font-size: 13px;
+}
+
+.black-text-lg {
+  color: #4A4A4A;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.grey-text {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.75em;
+  color: #A0B0B9;
+  letter-spacing: 0.5px;
+}
+
+.blue-text {
+  color: #2196F3;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+  width: 100%;
+}
+
+.logo-block {
+  display: block;
+  height: 100%;
+  padding: 3.125em 0em;
+}
+
+.logo-block img {
+  margin: 0 auto;
+}
+
+.tickets-container {
+  padding: 0em 7em;
+  margin: 0 auto;
+  display: flex;
+}
+
+.filter-block {
+  padding: 0.625em 0em;
+  max-width: 232px;
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.filter-block h3 {
+  margin-top: 0.625em;
+  margin-bottom: 0.625em;
+  padding: 0em 1.7em;
+}
+
+.filter-options div {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 2.5em;
+  padding: 1.25em 0em;
+  padding: 0em 1.25em;
+}
+
+.filter-options div:hover {
+  background: #F1FCFF;
+}
+
+.filter-options div label {
+  width: 100%;
+  cursor: pointer;
+}
+
+.custom-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+} 
+
+.custom-checkbox+label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+.custom-checkbox + label::before {
+  content: '';
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #2196F3;
+  box-sizing: border-box;
+  border-radius: 2px;
+  border-radius: 0.25em;
+  margin-right: 0.625em;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.custom-checkbox:checked + label::before {
+  background-image: url('/images/Shape.png');
+}
+
+.tickets-block {
+  margin-left: 1.25em;
+  max-width: 31.25em;
+  width: 100%;
+}
+
+.tabs-block {
+  display: flex;
+}
+
+
+
+.tabs-block > div {
+  cursor: pointer;
+  flex-basis: 50%;
+  height: 3.125em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+}
+
+.cheap-tickets {
+  border: 1px solid #DFE5EC;
+  border-right: 0px;
+  border-radius: 5px 0px 0px 5px;
+  -moz-border-radius: 5px 0px 0px 5px;
+  -webkit-border-radius: 5px 0px 0px 5px;
+}
+
+.fast-tickets {
+  border: 1px solid #DFE5EC;
+  border-left: 0px;
+  border-radius: 0px 5px 5px 0px;
+-moz-border-radius: 0px 5px 5px 0px;
+-webkit-border-radius: 0px 5px 5px 0px;
+}
+
+.cheap-tickets:hover {
+  background: #2196F3;
+  color: white;
+}
+
+.cheap-tickets:active {
+  background: #2196F3;
+  color: white;
+}
+
+.fast-tickets:hover {
+  background: #2196F3;
+  color: white;
+}
+
+.fast-tickets:active {
+  background: #2196F3;
+  color: white;
+}
+
+.active {
+  background-color: #2196F3 !important;
+  color: white;
+}
+
+.avia-block {
+  padding: 1.25em;
+  margin-top: 1.25em;
+  width: 100%;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.avia-logo {
+  width: 155px;
+}
+
+.top-block {
+  display: flex;
+  justify-content: space-between;
+}
+
+.departure-block {
+  margin-top: 1.25em;
+  display: flex;
+}
+
+.departure-block > div {
+  flex-basis: 33.33%;
+}
+
+.destination-block {
+  margin-top: 1.25em;
+  display: flex;
+}
+
+.destination-block > div {
+  flex-basis: 33.33%;
+}
+
+.loadingImg {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.loadingImg img {
+  width: 40px;
+}
